@@ -1,0 +1,14 @@
+version: '3'
+services:
+  scratchpad:
+    build: .
+    user: root
+    container_name: guardrails_serve_tutorial
+    ports:
+      - "8888:8888"
+      - "9001:9000"
+      - "8000:8000"
+
+    volumes:
+      - ./notebooks:/guardrails_serve_tutorial/notebooks
+    restart: "no"
