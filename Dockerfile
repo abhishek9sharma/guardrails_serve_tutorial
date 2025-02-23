@@ -8,7 +8,7 @@ EXPOSE 6006
 
 
 #https://docs.astral.sh/uv/guides/integration/docker/#available-images
-RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git tree
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git tree procps
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
 RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH"
