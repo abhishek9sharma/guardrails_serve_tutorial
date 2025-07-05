@@ -8,7 +8,9 @@ services:
       - "8888:8888"
       - "9000:9000"
       - "8000:8000"
+      - "8501:8501"
 
     volumes:
       - ./notebooks:/guardrails_serve_tutorial/notebooks
+      - ./src:/guardrails_serve_tutorial/src
     restart: "no"
