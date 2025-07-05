@@ -5,7 +5,7 @@ EXPOSE 8100
 EXPOSE 8265
 EXPOSE 8080
 EXPOSE 6006
-
+EXPOSE 8501
 
 #https://docs.astral.sh/uv/guides/integration/docker/#available-images
 RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates git tree procps
@@ -14,7 +14,7 @@ RUN sh /uv-installer.sh && rm /uv-installer.sh
 ENV PATH="/root/.local/bin/:$PATH"
 
 RUN uv pip install jupyterlab --system
-
+RUN uv pip install streamlit pydantic --system
 COPY startup.sh /guardrails_serve_tutorial/startup.sh
 RUN chmod +x /guardrails_serve_tutorial/startup.sh
 ENTRYPOINT ["/guardrails_serve_tutorial/startup.sh"]
